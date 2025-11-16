@@ -1,0 +1,49 @@
+package com.chowing;
+import java.util.Scanner;
+/*
+    使用Java面向对象技术存储用户姓名，年龄及性别信息，并打印对应信息。
+    输入：用户姓名、年龄、性别
+    输出：人物信息，校验年龄及性别信息是否合规 */
+public class practice05 {
+
+    static class UserAccount  {
+        String username;
+        int password;
+
+        public UserAccount(String username, int password) {
+            this.username = username;
+            this.password = password;
+        }
+    }
+
+    static UserAccount[] users = {
+        new UserAccount ("Amy", 1234),
+        new UserAccount ("Ben", 56789),
+        new UserAccount ("Carry", 13579)
+
+    };
+
+    static boolean validateLogin(String inputUsername, int inputPassword) {
+        for (UserAccount user : users) {
+            if (user.username.equals(inputUsername) && user.password == inputPassword) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public static void main (String [] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input your username");
+        String inputUserName = scanner.next();
+        System.out.println("Please input your password");
+        int inputPassword = scanner.nextInt();
+
+        if (validateLogin(inputUserName, inputPassword)) {
+            System.out.println("You are the user");
+        } else {
+            System.out.println("You are not the user");
+        }
+        
+    }
+}
