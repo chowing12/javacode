@@ -1,0 +1,53 @@
+package com.chowing;
+import java.util.Scanner;
+/*
+    判断键盘输入的是否是复杂密码。复杂密码的要求为长度至少8位，包含大写字母、小写字母及数字。
+    输入：键盘输入一个字符串密码
+    输出：true（复杂密码）、false（非复杂密码） */
+public class practice03 {
+
+    static boolean isComplexPassword (String password) {
+        if (password.length() < 8) {
+            return false;
+        }
+
+        boolean hasUapper = false;
+        boolean hasLower = false;
+        boolean hasDigit = false;
+
+
+        for ( int i =0; i<password.length(); i++) {
+            char c = password.charAt(i);
+
+            if (Character.isUpperCase(c)) {
+                hasUapper = true;
+            }
+
+            if (Character.isLowerCase(c)) {
+                hasLower = true;
+            }
+
+            if (Character.isDigit(c)) {
+                hasDigit = true;
+            }
+        }
+
+        return hasUapper && hasLower && hasDigit;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Please input your password");
+        Scanner scanner = new Scanner (System.in);
+        String password = scanner.next();
+        
+        if (isComplexPassword(password)) {
+            System.out.println("It is a complex password");
+
+        } else {
+            System.out.println("It is not a complex password");
+        }
+        scanner.close();
+
+    }
+    
+}
