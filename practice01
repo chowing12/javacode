@@ -1,0 +1,24 @@
+package com.chowing;
+import java.util.Random;
+
+public class practice01 {
+    public static void main(String[] args) {
+        /*随机生成一个 0 -100 的整数，并判断它是奇数还是偶数
+        输入：0-100之间的随机整数
+        输出：true（偶数）、false（奇数） */
+
+        //rand.nextInt()           // 任意整数
+        //rand.nextInt(上限)        // 0到上限-1的整数
+        //rand.nextInt(上限) + 起始值 // 起始值到起始值+上限-1
+        Random rand = new Random();
+
+        for (int i =1; i<5; i++) {
+            int num = rand.nextInt(100) +0;
+            if ( num %2 ==0) {
+                System.out.println("true" + " " +num);
+            } else {
+                System.out.println("false" + " "+ num);
+            }
+        }
+    }
+}
