@@ -1,0 +1,30 @@
+package com.chowing;
+import java.util.Scanner;
+/*
+    根据用水量计算当月水。水费为阶梯档位，20 吨以下为1.8元/吨，超过的部分3元/吨
+    输入：键盘输入当月用水量
+    输出：当月水费 */
+public class practice04 {
+    
+    public static void main (String [] args) {
+        System.out.println(" Enter your monthly water usage (ton).");
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            
+            double waterUser = scanner.nextDouble();
+            double count = 0;
+
+            if (waterUser <= 20) {
+                count = waterUser/ 1.8;
+                System.out.println("Water bill for the month " + count);
+            } else {
+                count = 20*1.8 + (waterUser -20) / 3;
+                System.out.println("Water bill for the month " + count);
+            } 
+            
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+    }
+}
