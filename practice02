@@ -1,0 +1,33 @@
+package com.chowing;
+
+public class practice02 {
+    static boolean isPrime(int n) {
+        if (n <=1) return false;
+        if ( n ==2) return true;
+        if ( n%2 == 0) return false;
+
+        for (int i = 3; i<n;i++) {
+            if ( n%i==0) return false;
+        }
+        return true;
+    }
+    /*
+        挑战：找出 0 - 100 之间的所有素数，并计算素数和。
+        输入：以1为间隔，循环输入0-100间的数
+        输出：0-100之间的素数和
+         */
+    public static void main(String[] args) {
+
+        for (int i = 2; i<=100; i++) {
+            try {
+                if (isPrime(i)) {
+                    System.out.println(i+ " ");
+                }
+            } catch (Exception e) {
+                System.out.println("error");
+            }
+        }
+        
+        
+    }
+}
