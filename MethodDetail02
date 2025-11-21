@@ -1,0 +1,32 @@
+package com.chowing;
+    
+public class MethodDetail02{
+    static class A {
+        public void print(int n) {
+            System.out,println("print() 方法被調用 n=" + n);
+        }
+
+        public void sayOk() { //sayOk 調用 print (直接調用)
+            print(10);
+            System.out.println("繼續执行 sayOk");
+        }
+
+        public void m1(){
+            System.out.println("m1()方法被調用");
+            B b = new B();
+            b.hi();
+        }
+    }
+
+    static class B {
+        public void hi() {
+            System.out.println("B类中的 hi()被执行");
+
+        }
+    }
+       
+
+    public static void main (String[] args) {
+        
+    }   
+}
