@@ -1,0 +1,18 @@
+package com.chowing;
+    
+public class MethodDetail01{
+    static class AA {
+        public int[] getSumAndSub (int n1, int n2) {
+            int[] resArr = new int[2];
+            resArr[0] = n1 + n2;
+            resArr[1] = n1 - n2;
+            return resArr;
+        }
+
+        public double f1() {
+            double d1 = 1.1*3;
+            int n = 100;
+            //return n; // int -> double (No)
+            return d1; // double -> int
+        }
+    }
