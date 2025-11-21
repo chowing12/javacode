@@ -1,0 +1,49 @@
+package com.chowing;
+import java.util.Scanner;
+
+//要求用戶添加一个數字， 將五个无序: 24,69,80,57,13，从小到大的有序數列
+
+public class BubbleSort02 {
+
+    public static void main(String[] args) {
+        int[] sort1 = {24, 69, 80, 57, 13};
+        int count = 0;
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("请输入一个数字:");
+        int num = scanner.nextInt();
+        
+        // 创建新数组包含用户输入的数字
+        int[] newArray = new int[sort1.length + 1];
+        for (int i = 0; i < sort1.length; i++) {
+            newArray[i] = sort1[i];
+        }
+        newArray[sort1.length] = num;
+        
+        System.out.println("原始数组: ");
+        printArray(newArray);
+        
+        // 使用冒泡排序（您的原始方法改进版）
+        for (int round = 0; round < newArray.length - 1; round++) {
+            for (int i = 0; i < newArray.length - 1 - round; i++) {
+                if (newArray[i] > newArray[i + 1]) {
+                    count = newArray[i];
+                    newArray[i] = newArray[i + 1];
+                    newArray[i + 1] = count;
+                }
+            }
+            System.out.println("第" + (round + 1) + "轮结果:");
+            printArray(newArray);
+        }
+        
+        scanner.close();
+    }
+    
+    // 辅助方法：打印数组
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
