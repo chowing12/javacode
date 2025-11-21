@@ -1,0 +1,35 @@
+package com.chowing;
+    
+public class MethodDetail03{
+    static class AA {
+        public boolean isOdd(int num) {
+            return num%2 !=0;
+        }
+
+        /*
+            ####
+            ####
+            ####
+            ####
+         */
+        public void printChar (int row, int column, char c) {
+            for (int i =0; i < row; i++) {
+                for (int j = 0; j < column; j++) {
+                    System.out.print(c);
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public static void main (String[] args) {
+        AA a = new AA();
+        if (a.isOdd(1)) {
+            System.out.println("is odd");
+        } else {
+            System.out.println("is even");
+        }
+        
+        a.printChar(10, 4, '#');
+    }   
+}
