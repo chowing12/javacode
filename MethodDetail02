@@ -3,7 +3,7 @@ package com.chowing;
 public class MethodDetail02{
     static class A {
         public void print(int n) {
-            System.out,println("print() 方法被調用 n=" + n);
+            System.out.println("print() 方法被調用 n=" + n);
         }
 
         public void sayOk() { //sayOk 調用 print (直接調用)
